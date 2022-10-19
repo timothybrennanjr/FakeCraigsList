@@ -9,8 +9,8 @@ const Posts = (props) => {
     const fetchPosts = async () => {
       const response = await fetch('https://strangers-things.herokuapp.com/api/2209-FTB-ET-WEB-FT/posts');
       const postData = await response.json();
-      console.log(postData.data.posts)
-      console.log(postData)
+      // console.log(postData.data.posts)
+      // console.log(postData)
       setPosts(postData.data.posts);
     }
     fetchPosts()
@@ -20,7 +20,7 @@ const Posts = (props) => {
       
         {
         posts.map(({title, price, description, _id, author, location}) => {
-          console.log(title, price, description, _id, author, location)
+          // console.log(title, price, description, _id, author, location)
         return(
          
           <div key={_id} className="postPreview">

@@ -7,12 +7,13 @@ const Register = (props) => {
     event.preventDefault()
     const username= event.target[0].value
     const password= event.target[1].value
-    console.log(username, password)
+    // console.log(username, password)
     const token = await registerUser(username, password)
-   //fork 
     localStorage.removeItem("token")
     localStorage.setItem('token', token)
   }
+
+
   return (
     <div className="box">
         <form onSubmit={handleSubmit}>
