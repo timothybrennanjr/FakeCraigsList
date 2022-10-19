@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavBar, Posts, Register, Login } from "./";
+import { NavBar, Posts, Register, Login, CreatePost } from "./";
 
 
 const Main = () => {
@@ -25,6 +25,7 @@ const Main = () => {
       </div>
       <div id="container">
         <Posts />
+        <CreatePost />
         {/* <>
         {
         posts.map(e => {

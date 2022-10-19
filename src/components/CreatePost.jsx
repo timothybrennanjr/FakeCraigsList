@@ -1,26 +1,32 @@
-// import React from "react";
+import React from "react";
+import { createPost } from "../api-adapter"
 
-// const CreatePost = (props) => {
-//     async function handleSubmit (event) {
-//       event.preventDefault()
-//       const username= event.target[0].value
-//       const password= event.target[1].value
-//     //   console.log(username, password)
-//       const token = await registerUser(username, password)
-//       localStorage.removeItem("token")
-//       localStorage.setItem('token', token)
-//     }
-//     return (
-//       <div className="box">
-//           <form onSubmit={handleSubmit}>
-//               <label htmlFor="username">Username:</label>
-//               <input id="username" type="text" required />
-//               <label htmlFor="password">Password:</label>
-//               <input id="password" type="password" required />
-//               <button type="submit">Submit</button>
-//           </form>
-//       </div>
-//     )
-//   };
+const CreatePost = (props) => {
+    async function handleCreatePost (event) {
+      event.preventDefault()
+      const title= event.target[0].value
+      const description= event.target[1].value
+      const price = event.target[2].value
+    //   console.log(username, password)
+      const token = await createPost(elements)
+      localStorage.removeItem("token")
+      localStorage.setItem('token', token)
+    }
+    return (
+      <div className="box">
+          <form onSubmit={handleCreatePost}>
+              <label htmlFor="title">Title:</label>
+              <input id="postTitle" type="text" required />
+              <label htmlFor="description">Description</label>
+              <input id="postDescription" type="text" required />
+              <label htmlFor="price">Price:</label>
+              <input id="postPrice" type="text" required />
+              //maybe add will deliver button later
+              <button type="submit">Create Post</button>
+          </form>
+      </div>
+    )
+  };
 
-// export default CreatePost;
+  
+export default CreatePost;
