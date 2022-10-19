@@ -9,7 +9,7 @@ const Register = (props) => {
     const password= event.target[1].value
     console.log(username, password)
     const token = await registerUser(username, password)
-   
+   //fork 
     localStorage.removeItem("token")
     localStorage.setItem('token', token)
   }
