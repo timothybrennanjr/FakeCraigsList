@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { NavBar, Posts, Register } from "./";
+import { NavBar, Posts, Register, Login } from "./";
+
 
 const Main = () => {
   // const [posts, setPosts] = useState([]);
@@ -20,6 +21,7 @@ const Main = () => {
       <div id="navbar">
         <NavBar />
         <Register />
+        <Login />
       </div>
       <div id="container">
         <Posts />

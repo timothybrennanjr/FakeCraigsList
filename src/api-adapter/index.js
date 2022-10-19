@@ -26,3 +26,22 @@ export async function registerUser(username, password) {
     const result = await response.json()
     return result.data.token
 }
+
+export async function loginUser(username, password) {
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+
+        }, body: JSON.stringify({
+            user: {
+              username,
+              password
+            }
+          })
+        }.then(response => response.json())
+          .then(result => {
+            console.log(result);
+          })
+          .catch(console.error);
+        }

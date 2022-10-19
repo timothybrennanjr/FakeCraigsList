@@ -20,7 +20,7 @@ const Posts = (props) => {
       
         {
         posts.map(({title, price, description, _id, author, location}) => {
-          // console.log(title, price, description, _id, author, location)
+          console.log(title, price, description, _id, author, location)
         return(
          
           <div key={_id} className="postPreview">
