@@ -4,8 +4,8 @@ const COHORT = '2209-FTB-ET-WEB-FT'
 export async function getPosts() {
     const response = await fetch(`${BASE_URL}/api/${COHORT}/posts`)
     const result = await response.json()
-    const posts = result.data.posts
-    return posts
+    const postResult = result.data.posts
+    return postResult
 }
 
 export async function registerUser(username, password) {

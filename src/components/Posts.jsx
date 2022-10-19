@@ -4,6 +4,7 @@ import {getPosts} from '../api-adapter'
 
 const Posts = (props) => {
   const [posts, setPosts] = useState([]);
+  
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch('https://strangers-things.herokuapp.com/api/2209-FTB-ET-WEB-FT/posts');
