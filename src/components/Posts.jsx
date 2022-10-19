@@ -7,9 +7,10 @@ const Posts = (props) => {
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch('https://strangers-things.herokuapp.com/api/2209-FTB-ET-WEB-FT/posts');
-      const data = await response.json();
-      console.log(data.data.posts)
-      setPosts(data.data.posts);
+      const postData = await response.json();
+      console.log(postData.data.posts)
+      console.log(postData)
+      setPosts(postData.data.posts);
     }
     fetchPosts()
   }, [])
@@ -17,10 +18,13 @@ const Posts = (props) => {
     <div id="posts">
       
         {
-        posts.map(e => {
+        posts.map(({title, price, description, _id}) => {
+          console.log(title, price, description, _id)
         return(
-          <div key={`posts-${posts._id}`} className="posts">
-            <div>{posts.price}</div>
+          <div key={_id} className="posts">
+            <div>{title}</div>
+            <div>{price}</div>
+            <div>{description}</div>
           </div>
         ) 
         })
