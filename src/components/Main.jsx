@@ -3,28 +3,30 @@ import { NavBar, Posts, Register } from "./";
 
 
 const Main = () => {
-const [posts, setPosts] = useState([]);
+// const [posts, setPosts] = useState([]);
 // console.log('posts', posts)
 
 
-useEffect(() => {
-  const fetchPosts = async () => {
-    const response = await fetch('https://strangers-things.herokuapp.com/api/2209-FTB-ET-WEB-FT/posts');
-    const data = await response.json();
-    // console.log(data.data.posts)
-    setPosts(data.data.posts);
-  }
-  fetchPosts()
-}, [])
+// useEffect(() => {
+//   const fetchPosts = async () => {
+//     const response = await fetch('https://strangers-things.herokuapp.com/api/2209-FTB-ET-WEB-FT/posts');
+//     const data = await response.json();
+//     // console.log(data.data.posts)
+//     setPosts(data.data.posts);
+//   }
+//   fetchPosts()
+// }, [])
 
   return (
     <div id="main">
       <div id="navbar">
          <NavBar/>
+         {/* <Posts/> */}
         <Register/>
 
       </div>
       <div id="container">
+      <Posts/>
         {/* <>
         {
         posts.map(e => {

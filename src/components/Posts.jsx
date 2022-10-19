@@ -1,10 +1,33 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {getPosts} from '../api-adapter'
 
 
-const Posts = () => {
+const Posts = (props) => {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const response = await fetch('https://strangers-things.herokuapp.com/api/2209-FTB-ET-WEB-FT/posts');
+      const data = await response.json();
+      console.log(data.data.posts)
+      setPosts(data.data.posts);
+    }
+    fetchPosts()
+  }, [])
   return (
     <div id="posts">
-      <h2> I am posts</h2>
+      
+        {
+        posts.map(e => {
+        return(
+          <div key={`posts-${posts._id}`} className="posts">
+            <div>{posts.price}</div>
+          </div>
+        ) 
+        })
+      }
+        
+       
+      
     </div>
   );
 };
