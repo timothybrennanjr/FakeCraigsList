@@ -19,13 +19,16 @@ const Posts = (props) => {
     <div id="posts">
       
         {
-        posts.map(({title, price, description, _id}) => {
-          console.log(title, price, description, _id)
+        posts.map(({title, price, description, _id, author, location}) => {
+          console.log(title, price, description, _id, author, location)
         return(
-          <div key={_id} className="posts">
+         
+          <div key={_id} className="postPreview">
             <div>{title}</div>
-            <div>{price}</div>
-            <div>{description}</div>
+            <div>Item Description {description}</div>
+            <div>Price: {price}</div>
+            <div>Seller:{author.username}</div>
+            <div>Location:{location}</div>
           </div>
         ) 
         })

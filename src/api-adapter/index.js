@@ -18,7 +18,6 @@ export async function registerUser(username, password) {
             user: { 
                 username,
                 password
-            
             }
         })
     }
