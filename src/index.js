@@ -1,27 +1,28 @@
-import React from 'react'
-import ReactDOM from "react-dom/client"
-import {Main} from './components'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Main, NavBar, Posts, Register } from "./components";
 import {
-    createBrowserRouter,
-    RouterProvider,
-    Route,
-    createRoutesFromElements,
-} from "react-router-dom"
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  createRoutesFromElements,
+} from "react-router-dom";
 
-// const router = createBrowserRouter(
-//     createRoutesFromElements(
-//         <Route path="/" element={<Main />}>
-//             <Route path ="NavBar" element={<NavBar />} />
-//         </Route>
+const container = document.getElementById("app");
+const root = ReactDOM.createRoot(container);
 
-//     )
-// );
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/">
+      <Route path="home" element={<Main />} />
+      <Route path="posts" element={<Posts />} />
+    </Route>
+  )
+);
 
-const container = document.getElementById('app')
-const root = ReactDOM.createRoot(container)
-
-// root.render(<Main />)
 root.render(
-<React.StrictMode>
-    <Main />
-</React.StrictMode>)
+  <React.StrictMode>
+    <NavBar />
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);

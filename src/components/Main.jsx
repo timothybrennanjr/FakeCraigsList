@@ -5,24 +5,26 @@ import {
   RouterProvider,
   Route,
   createRoutesFromElements,
-} from "react-router-dom"
+} from "react-router-dom";
+
+
 
 const Main = () => {
 
   return (
     <div id="main">
-                <NavBar />
-      {/* <RouterProvider router={router}>
-        <div id="navbar">
-          <NavBar />
+
+      {/* <RouterProvider router={router}> */} 
+        {/* <div id="navbar"> */}
+          {/* <NavBar />
           <Register />
           <Login />
         </div>
         <div id="container">
           <Posts />
           <CreatePost />
-        </div>
-      </RouterProvider> */}
+        </div>  */}
+      {/* </RouterProvider> */}
     </div>
   );
 };

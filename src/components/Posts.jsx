@@ -10,8 +10,6 @@ const Posts = (props) => {
     const fetchPosts = async () => {
       const response = await fetch('https://strangers-things.herokuapp.com/api/2209-FTB-ET-WEB-FT/posts');
       const postData = await response.json();
-      // console.log(postData.data.posts)
-      // console.log(postData)
       setPosts(postData.data.posts);
     }
     fetchPosts()
