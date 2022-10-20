@@ -1,10 +1,13 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 const PostDetails = (props) => {
-    const post = props.post;
+    const {id} = useParams()
+    const post = props.filterPost(id)[0];
+   
     return (
-        <div className="single-post box">
+        <div className="post-details box">
             <div>{post.title}</div>
             <div>{post.description}</div>
             <div>{post.price}</div>

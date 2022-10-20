@@ -16,13 +16,30 @@ import {
 } from "react-router-dom";
 
 const Main = () => {
+  const [posts, setPosts] = useState([]);
+  
+  
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const response = await fetch('https://strangers-things.herokuapp.com/api/2209-FTB-ET-WEB-FT/posts');
+      const postData = await response.json();
+      setPosts(postData.data.posts);
+    }
+    fetchPosts()
+  }, [])
+  function filterPost (id) {
+    return posts.filter ((post)=> {
+      return post._id == id
+    })
+  }
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<NavBar />}>
-        <Route path="posts" element={<Posts />} />
+        <Route path="posts" element={<Posts posts={posts}/>} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
-        <Route path="details" element={<PostDetails />} />
+        <Route path="post/details/:id" element={<PostDetails filterPost={filterPost}/>} />
       </Route>
     )
   );
@@ -30,16 +47,7 @@ const Main = () => {
   return (
     <div id="main">
       <RouterProvider router={router} />
-      {/* <div id="navbar"> */}
-      {/* <NavBar />
-          <Register />
-          <Login />
-        </div>
-        <div id="container">
-          <Posts />
-          <CreatePost />
-        </div>  */}
-      {/* </RouterProvider> */}
+      
     </div>
   );
 };
