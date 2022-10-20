@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import {getPosts} from '../api-adapter'
-// import {SinglePost} from './SinglePost' return <SinglePost/> below
+import {SinglePost} from './' 
+import { useParams, Outlet } from 'react-router-dom';
 
 
 const Posts = (props) => {
   const [posts, setPosts] = useState([]);
+  const {id} = useParams()
   
   useEffect(() => {
     const fetchPosts = async () => {
@@ -14,7 +16,14 @@ const Posts = (props) => {
     }
     fetchPosts()
   }, [])
+  function filterPost () {
+    return posts.filter ((post)=> {
+      return post._id == id
+    })
+  }
+
   return (
+
     <div id="posts">
       
         {
@@ -28,6 +37,11 @@ const Posts = (props) => {
             <div>Price: {price}</div>
             <div>Seller:{author.username}</div>
             <div>Location:{location}</div>
+            {id ? <Outlet context={filterPost()}/>:
+            posts.length ? posts.map((post) => {
+                return <SinglePost key={`post-id-${post._id}`} post={post}/>
+            }) :<div>Loading your posts</div>
+            }
           </div>
         ) 
         })

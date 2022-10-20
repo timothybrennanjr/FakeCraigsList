@@ -74,10 +74,14 @@ tr:hover {
 img {
   border-radius: 5px;
 } 
+
 #posts {
   border: 2px solid black;
+  
 }
 
 .postPreview{
   border: 2px solid black;
+  display:flex; 
+  padding-top: 80px;
 }
