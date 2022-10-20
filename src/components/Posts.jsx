@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {getPosts} from '../api-adapter'
+// import {SinglePost} from './SinglePost' return <SinglePost/> below
 
 
 const Posts = (props) => {
