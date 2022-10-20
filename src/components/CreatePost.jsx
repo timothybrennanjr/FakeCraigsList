@@ -21,7 +21,13 @@ const CreatePost = (props) => {
               <input id="postDescription" type="text" required />
               <label htmlFor="price">Price:</label>
               <input id="postPrice" type="text" required />
-              //maybe add will deliver button later
+
+              <label htmlFor="willDeliver">Will Deliver?</label>
+                {/* { post.WillDeliver ? (
+                  <input type="checkbox" id="willDeliver" checked />
+              ) : ? need to add something here, have this operate off of state change stuff
+              } */}
+
               <button type="submit">Create Post</button>
           </form>
       </div>
