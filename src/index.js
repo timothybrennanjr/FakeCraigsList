@@ -8,21 +8,20 @@ import {
     createRoutesFromElements,
 } from "react-router-dom"
 
-const router = createBrowserRouter(
-    createRoutesFromElements(
-        <Route path="/" element={<Main />}>
-            <Route path ="NavBar" element={<NavBar />} />
-        </Route>
+// const router = createBrowserRouter(
+//     createRoutesFromElements(
+//         <Route path="/" element={<Main />}>
+//             <Route path ="NavBar" element={<NavBar />} />
+//         </Route>
 
-    )
-);
+//     )
+// );
 
 const container = document.getElementById('app')
 const root = ReactDOM.createRoot(container)
 
-
-
 // root.render(<Main />)
-root.render(<React.StrictMode>
-    <RouterProvider router={router}/>
+root.render(
+<React.StrictMode>
+    <Main />
 </React.StrictMode>)
