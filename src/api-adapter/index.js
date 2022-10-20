@@ -13,7 +13,7 @@ export async function registerUser(username, password) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-
+    
     },
     body: JSON.stringify({
       user: {
@@ -56,12 +56,17 @@ export async function loginUser(username, password) {
   return result.data.token;
 }
 
+const getTokenFromLocal = localStorage.getItem("token")
+
+    
+
+
 export async function createPost(title, description, price) {
     const createPostOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer //token string here`
+        "Authorization": `Bearer ${getTokenFromLocal}`
       },
       body: JSON.stringify({
         post: {
@@ -72,6 +77,7 @@ export async function createPost(title, description, price) {
         },
       }),
     };
+    console.log(createPostOptions)
     const response = await fetch(
       `${BASE_URL}/api/${COHORT}/posts`,
       createPostOptions

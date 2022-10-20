@@ -4,11 +4,11 @@ import { createPost } from "../api-adapter"
 const CreatePost = (props) => {
     async function handleCreatePost (event) {
       event.preventDefault()
-      const title= event.target[0].value
-      const description= event.target[1].value
+      const title = event.target[0].value
+      const description = event.target[1].value
       const price = event.target[2].value
     //   console.log(username, password)
-      const token = await createPost(elements)
+      const token = await createPost(title, description, price)
       localStorage.removeItem("token")
       localStorage.setItem('token', token)
     }
