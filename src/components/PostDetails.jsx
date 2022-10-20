@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const SinglePost = (props) => {
+const PostDetails = (props) => {
     const post = props.post;
     return (
         <div className="single-post box">
@@ -15,7 +15,4 @@ const SinglePost = (props) => {
     )
 }
 
-
-
-
-export default SinglePost;
+export default PostDetails;
