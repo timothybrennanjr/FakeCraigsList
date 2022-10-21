@@ -8,6 +8,25 @@ export async function getPosts() {
   return postResult;
 }
 
+export async function getMessages(post, token) {
+  const messageOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      message: {
+        content: "",
+      },
+    }),
+}
+const response = await fetch(`${BASE_URL}/api/${COHORT}/posts/${post._id}/messages`, messageOptions);
+const result = await response.json();
+console.log(response)
+return result
+}
+
 export async function registerUser(username, password) {
   const registerOptions = {
     method: "POST",
