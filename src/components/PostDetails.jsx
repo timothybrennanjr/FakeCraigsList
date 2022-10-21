@@ -12,7 +12,7 @@ const PostDetails = (props) => {
         description: '',
         price: '',
         location: '',
-    })
+    }) 
 
     useEffect(() => {
         setFormDetails(
