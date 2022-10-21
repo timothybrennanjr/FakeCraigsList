@@ -82,7 +82,7 @@ img {
   justify-content: center;
 }
 
-/* .login-box {
+.login-box {
   display:flex;
   justify-content: center;
   align-items: center;
@@ -116,7 +116,7 @@ img {
   height: 35px;
   /* border-radius: 2px; */
   
-/* }
+}
 
 .register-header {
   display:flex;
@@ -149,7 +149,7 @@ img {
 
 #usernameLogin, #loginPassword, #loginButton {
   height: 30px;
-} */ 
+} 
 
 
 
