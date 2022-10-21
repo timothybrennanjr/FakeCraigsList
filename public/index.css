@@ -79,5 +79,82 @@ img {
   border: 2px solid black;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
+
+/* .login-box {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.register-box {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  width: 360px;
+  margin: auto;
+  padding: 15px;
+
+}
+.register-form {
+  display:flex;
+  padding-top: 20px;
+  border: 2px solid red;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  width: 360px;
+  height: 150px;
+  
+
+}
+
+#usernameRegister, #registerPassword, #registerButton {
+  height: 35px;
+  /* border-radius: 2px; */
+  
+/* }
+
+.register-header {
+  display:flex;
+  flex-direction: column;
+  align-items:center
+  
+}
+
+.login-box {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  width: 360px;
+  margin: auto;
+  padding: 10px;
+
+}
+.login-form {
+  display:flex;
+  padding-top: 20px;
+  border: 2px solid red;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+  width: 360px;
+  height: 150px;
+
+}
+
+#usernameLogin, #loginPassword, #loginButton {
+  height: 30px;
+} */ 
+
+
+
+
+
+
+
 

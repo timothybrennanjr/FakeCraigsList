@@ -14,14 +14,18 @@ const Register = (props) => {
 
 
   return (
-    <div className="box">
-        <form onSubmit={handleRegister}>
-            <label htmlFor="username">Username:</label>
-            <input id="username" type="text" required />
-            <label htmlFor="password">Password:</label>
-            <input id="password" type="password" required />
-            <button type="submit">Register</button>
+    
+    <div className="register-box">
+        {/* <h1 className="register-header">Register */}
+        <form onSubmit={handleRegister} className="register-form">
+            
+            {/* <label htmlFor="username">Username:</label> */}
+            <input id="usernameRegister" type="text" placeholder="Username *" required />
+            {/* <label htmlFor="password">Password:</label> */}
+            <input id="registerPassword" type="password" placeholder="Password *" required />
+            <button type="submit" id="registerButton">Register</button>
         </form>
+        {/* </h1> */}
     </div>
   )
 };

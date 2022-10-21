@@ -14,13 +14,14 @@ const Login = (props) => {
   
   
     return (
-      <div className="box">
-          <form onSubmit={handleLogin}>
-              <label htmlFor="username">Username:</label>
-              <input id="usernameLogin" type="text" required />
-              <label htmlFor="password">Password:</label>
-              <input id="loginPassword" type="password" required />
-              <button type="submit">Login</button>
+      <div className="login-box">
+        
+          <form onSubmit={handleLogin} className="login-form">
+              {/* <label htmlFor="username">Username:</label> */}
+              <input id="usernameLogin" type="text" placeholder="Username *" required />
+              {/* <label htmlFor="password">Password:</label> */}
+              <input id="loginPassword" type="password" placeholder="Password *" required />
+              <button type="submit" id="loginButton">Login</button>
           </form>
       </div>
     )
