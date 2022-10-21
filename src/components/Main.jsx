@@ -7,7 +7,8 @@ import {
   CreatePost,
   SinglePost,
   PostDetails,
-  Messages
+  Messages,
+  CreateMessages
 } from "./";
 import {
   createBrowserRouter,
@@ -42,7 +43,7 @@ const Main = () => {
         <Route path="login" element={<Login />} />
         <Route path="post/details/:id" element={<PostDetails filterPost={filterPost}/>} />
         <Route path="create-post" element={<CreatePost/>}/>
-        {/* <Route path="messages" element={<Messages/>}/> */}
+        <Route path="create-message" element={<CreateMessages/>}/>
       </Route>
     )
   );

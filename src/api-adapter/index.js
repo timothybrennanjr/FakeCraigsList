@@ -14,7 +14,7 @@ export async function getMessages(token, id, post) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`
+      "Authorization": `Bearer ${getTokenFromLocal}`
     },
     body: JSON.stringify({
       message: {
@@ -22,10 +22,35 @@ export async function getMessages(token, id, post) {
       },
     }),
 }
+
+
 const response = await fetch(`${BASE_URL}/api/${COHORT}/posts/${id}/messages`, messageOptions);
 const result = await response.json();
 console.log(result)
 return result
+}
+
+export async function createMessage (id, message) {
+  const createMessageOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${getTokenFromLocal}`
+    },
+    body: JSON.stringify({
+      post: {
+       message
+      },
+    }),
+  };
+  console.log(createMessageOptions)
+  const response = await fetch(
+    `${BASE_URL}/api/${COHORT}/posts/${id}/messages`,
+    createMessageOptions
+  );
+  const result = await response.json();
+  console.log(result)
+  return result.data.token;
 }
 
 export async function registerUser(username, password) {

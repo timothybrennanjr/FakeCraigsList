@@ -3,6 +3,7 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
+  background-image: linear-gradient(rgb(63, 63, 201), lightblue, pink);
 }
 
 #app {
@@ -23,14 +24,50 @@ body {
   flex-grow: 1;
   max-height: 10%;
   min-height: 40px;
-  background-color: #222222;
+  background-image:linear-gradient(to right, blue, lightblue, purple);
   color: white;
   display: flex;
   align-items: center;
+  border-bottom: 2px solid black;
+  justify-content: space-between; 
+  padding-right:20px;
+  padding-left:20px;
+  
+
+}
+
+.nav {
+  display: flex;
+  
+
+}
+
+#navTitle {
+  border: 2px solid black;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  width: 15%;
+  text-align: center;
 }
 
 #navbar div {
   padding: 5px;
+}
+
+.navButtons {
+  border: 1px solid black;
+  background-color: white;
+  text-decoration: none;
+  width: 80px; 
+  height: 20px;
+  text-align:center;
+  color: black;
+
+}
+
+.navButtons {
+  margin-right:20px
 }
 
 #container {
@@ -80,6 +117,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 20px;
 }
 
 .login-box {
@@ -93,16 +131,16 @@ img {
   display:flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
   width: 360px;
   margin: auto;
   padding: 15px;
+  color: white;
+
 
 }
 .register-form {
   display:flex;
   padding-top: 20px;
-  border: 2px solid red;
   flex-direction: column;
   justify-content: space-between;
   padding: 15px;
@@ -129,27 +167,36 @@ img {
   display:flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
   width: 360px;
   margin: auto;
-  padding: 10px;
+  padding: 15px;
+  color: white;
+
 
 }
 .login-form {
   display:flex;
   padding-top: 20px;
-  border: 2px solid red;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 15px;
   width: 360px;
   height: 150px;
 
 }
 
 #usernameLogin, #loginPassword, #loginButton {
-  height: 30px;
+  height: 35px;
 } 
+
+.login-header {
+  display:flex;
+  flex-direction: column;
+  align-items:center
+  
+}
+
+
 
 
 
