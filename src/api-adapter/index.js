@@ -105,3 +105,16 @@ export async function createPost(title, description, price) {
     const result = await response.json()
     return result
   }
+
+  export async function deletePost (id, token) {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      }
+    }
+    const response = await fetch(`${BASE_URL}/api/${COHORT}/posts/${id}`, options)
+    const result = await response.json()
+    return result
+  }

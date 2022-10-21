@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { useParams } from 'react-router-dom'
-import { updatePost } from "../api-adapter"
+import { updatePost, deletePost } from "../api-adapter"
 import { useState, useEffect } from "react"
 
 const PostDetails = (props) => {
@@ -49,23 +49,51 @@ const PostDetails = (props) => {
 
     
     return (
-        <div className="post-details box">
-            <div>{post.title}</div>
-            <div>{post.description}</div>
-            <div>{post.price}</div>
-            <div>{post.author.username}</div>
-            <div>{post.location}</div>
-            <Link to ={"/posts"}><button>Go to Posts</button></Link>
-                <div className='box'>
-                    <form onChange={handleChange} onSubmit={handleSubmit}>
-                        <input id='title' defaultValue={formDetails.title}/>
-                        <input id='description' defaultValue={formDetails.description}/>
-                        <input id='price' defaultValue={formDetails.price}/>
-                        <input id='location' defaultValue={formDetails.location}/>
-                        <button type='submit'>Submit</button>
-                    </form>
-                </div>
-        </div>
+        <>
+      {post ? (<>
+        <div className="box">
+          <div>{post.title} </div>
+          <div>{post.description} </div>
+          <div>{post.price} </div>
+          <div>{post.location} </div>
+          <label htmlFor="will-deliver">Will Deliver</label>
+          <Link to={"/posts"}>
+            <button>Go Back</button>
+          </Link>
+              </div>
+              <div className="box">
+                  <form onChange={handleChange} onSubmit={handleSubmit}>
+                      <input id='title'defaultValue={formDetails.title}/>
+                      <input id='description'defaultValue={formDetails.description}/>
+                      <input id='price'defaultValue={formDetails.price}/>
+                      <input id='location' defaultValue={formDetails.location} />
+                      <button type='submit'>Submit</button>
+                </form>
+                  <button id={post._id ? `${post._id}` : null} onClick={(e) => { handleDelete(e) }}>Delete Post</button>
+              </div>
+          </>
+      ) : (
+        <div>Loading your post details...</div>
+      )}
+    </>
+        // <div className="post-details box">
+        //     <div>{post.title}</div>
+        //     <div>{post.description}</div>
+        //     <div>{post.price}</div>
+        //     <div>{post.author.username}</div>
+        //     <div>{post.location}</div>
+        //     <Link to ={"/posts"}><button>Go to Posts</button></Link>
+        //         <div className='box'>
+        //             <form onChange={handleChange} onSubmit={handleSubmit}>
+        //                 <input id='title' defaultValue={formDetails.title}/>
+        //                 <input id='description' defaultValue={formDetails.description}/>
+        //                 <input id='price' defaultValue={formDetails.price}/>
+        //                 <input id='location' defaultValue={formDetails.location}/>
+        //                 <button type='submit'>Submit</button>
+        //             </form>
+        //                 <button id= {post._id ? `${post._id}` : null} onClick={(e) => (handleDelete(e))}>Delete Post</button>
+        //         </div>
+        // </div>
         
     )
 }
