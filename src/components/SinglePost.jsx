@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {Messages} from "./"
 
 const SinglePost = (props) => {
     const post = props.post;
@@ -11,6 +12,7 @@ const SinglePost = (props) => {
             <div>{post.author.username}</div>
             <div>{post.location}</div>
             <Link to ={`/post/details/${post._id}`}><button>Post details</button></Link>
+            <Messages postId={post._id}/>
         </div>
     )
 }

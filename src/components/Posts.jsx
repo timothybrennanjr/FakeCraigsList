@@ -7,25 +7,13 @@ const Posts = (props) => {
   const posts = props.posts;
   return (
     <div id="posts">
-      {posts.map(({ title, price, description, _id, author, location }) => {
-        console.log(title, price, description, _id, author, location);
-        return (
-          <div key={_id} className="postPreview">
-            <div>{title}</div>
-            <div>Item Description {description}</div>
-            <div>Price: {price}</div>
-            <div>Seller:{author.username}</div>
-            <div>Location:{location}</div>
-            {posts.length ? (
-              posts.map((post) => {
-                return <SinglePost key={`post-id-${post._id}`} post={post} />;
-              })
-            ) : (
-              <div>Loading Posts</div>
-            )}
-          </div>
-        );
-      })}
+      {posts.length ? (
+        posts.map((post) => {
+          return <SinglePost key={`post-id-${post._id}`} post={post} />;
+        })
+      ) : (
+        <div>Loading Posts</div>
+      )}
     </div>
   );
 };

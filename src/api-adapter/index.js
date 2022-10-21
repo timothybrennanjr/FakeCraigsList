@@ -8,7 +8,8 @@ export async function getPosts() {
   return postResult;
 }
 
-export async function getMessages(post, token) {
+export async function getMessages(token, id, post) {
+  console.log(token)
   const messageOptions = {
     method: "POST",
     headers: {
@@ -17,13 +18,13 @@ export async function getMessages(post, token) {
     },
     body: JSON.stringify({
       message: {
-        content: "",
+        content: "Ed is amazing"
       },
     }),
 }
-const response = await fetch(`${BASE_URL}/api/${COHORT}/posts/${post._id}/messages`, messageOptions);
+const response = await fetch(`${BASE_URL}/api/${COHORT}/posts/${id}/messages`, messageOptions);
 const result = await response.json();
-console.log(response)
+console.log(result)
 return result
 }
 

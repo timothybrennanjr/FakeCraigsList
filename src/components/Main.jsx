@@ -42,7 +42,7 @@ const Main = () => {
         <Route path="login" element={<Login />} />
         <Route path="post/details/:id" element={<PostDetails filterPost={filterPost}/>} />
         <Route path="create-post" element={<CreatePost/>}/>
-        <Route path="messages" element={<Messages/>}/>
+        {/* <Route path="messages" element={<Messages/>}/> */}
       </Route>
     )
   );
