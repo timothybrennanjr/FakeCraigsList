@@ -56,7 +56,17 @@ const PostDetails = (props) => {
             <div>{post.author.username}</div>
             <div>{post.location}</div>
             <Link to ={"/posts"}><button>Go to Posts</button></Link>
+                <div className='box'>
+                    <form onChange={handleChange} onSubmit={handleSubmit}>
+                        <input id='title' defaultValue={formDetails.title}/>
+                        <input id='description' defaultValue={formDetails.description}/>
+                        <input id='price' defaultValue={formDetails.price}/>
+                        <input id='location' defaultValue={formDetails.location}/>
+                        <button type='submit'>Submit</button>
+                    </form>
+                </div>
         </div>
+        
     )
 }
 
