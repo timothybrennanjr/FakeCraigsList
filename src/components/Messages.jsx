@@ -13,8 +13,8 @@ const Messages = (props) => {
       console.log(error);
     }
   }
-  
-  return <h2>Hello Messages</h2>
+
+  return <h2>Hello Messages</h2>;
 };
 
 export default Messages;
