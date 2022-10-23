@@ -1,14 +1,6 @@
 const BASE_URL = "https://strangers-things.herokuapp.com";
 const COHORT = "2209-FTB-ET-WEB-FT";
 
-//function for getting registered users 
-export async function getUsers() {
-  const response = await fetch(`${BASE_URL}/api/${COHORT}/users`)
-  const result = await response.json()
-  const 
-}
-
-
 export async function getPosts() {
   const response = await fetch(`${BASE_URL}/api/${COHORT}/posts`);
   const result = await response.json();
