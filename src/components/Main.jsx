@@ -18,8 +18,26 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
+//NEW
+import { getUsers } from "../api-adapter";
+
+
 const Main = () => {
   const [posts, setPosts] = useState([]);
+  
+//NEW
+  const [userList, setUserList] = useState(null)
+
+//NEW
+  useEffect(() => {
+    getUsers()
+    .then(users => {
+      setUserList(users)
+    })
+    .catch(error => {
+      //add error message later
+    })
+  }, [])
   
   
   useEffect(() => {
