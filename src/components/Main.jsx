@@ -7,6 +7,7 @@ import {
   CreatePost,
   SinglePost,
   PostDetails,
+  Profile,
   Messages,
   CreateMessages
 } from "./";
@@ -44,6 +45,7 @@ const Main = () => {
         <Route path="post/details/:id" element={<PostDetails filterPost={filterPost}/>} />
         <Route path="create-post" element={<CreatePost/>}/>
         <Route path="create-message" element={<CreateMessages/>}/>
+        <Route path="profile" element={<Profile/>}/>
       </Route>
     )
   );

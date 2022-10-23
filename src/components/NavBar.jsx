@@ -9,6 +9,7 @@ const NavBar = () => {
       <NavLink className="navButtons" to="/posts">Posts</NavLink>
       <NavLink className="navButtons" to="/login">Login</NavLink>
       <NavLink className="navButtons" to="/register">Register</NavLink>
+      <NavLink className="navButtons" to="/profile">Profile</NavLink>
       </div>
     </div>
       <Outlet/></>

@@ -78,6 +78,13 @@ body {
   justify-content: center;
 }
 
+#post-Details {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 #single-contact {
   display: flex;
 }
@@ -195,8 +202,40 @@ img {
   align-items:center
   
 }
+#postDetailsMain {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.singlePost {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  border: 2px solid black;
+  word-spacing: 2px;
+  margin: 40px;
+  justify-content: center;
+}
+#postDetails {
+  background-color: white;
+}
+
+.postDetailsButtons{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 40px;
+  border: solid 2px wheat;
+  justify-content: space-between;
+}
 
 
+.deleteButton {
+  height: 30px;
+  
+}
 
 
 
